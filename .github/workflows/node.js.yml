@@ -29,6 +29,7 @@ jobs:
     - run: npm test
 
     - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@v4
+      uses: peaceiris/actions-gh-pages@v3
       with:
-      folder: build
+        github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_dir: ./build
