@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.073c9b0a.css",
-    "main.js": "/static/js/main.05f177be.js",
-    "index.html": "/index.html",
-    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
-    "main.05f177be.js.map": "/static/js/main.05f177be.js.map"
+    "main.css": "/dietscanner/static/css/main.073c9b0a.css",
+    "main.js": "/dietscanner/static/js/main.05f177be.js",
+    "index.html": "/dietscanner/index.html",
+    "main.073c9b0a.css.map": "/dietscanner/static/css/main.073c9b0a.css.map",
+    "main.05f177be.js.map": "/dietscanner/static/js/main.05f177be.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
