@@ -1,11 +1,23 @@
-import React from 'react';
-import './App.css';
-import {SelectDiet} from "./components/SelectDiet";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { SelectDiet } from "./pages/SelectDiet";
+import AddIngredients from "./pages/AddIngredients";
 
-function App() {
+const App: React.FC = () => {
   return (
-      <SelectDiet />
+    <Routes>
+      <Route path="/" element={<SelectDiet />} />
+      <Route
+        path="/plant-based"
+        element={<AddIngredients diet="Plant-based" />}
+      />
+      <Route
+        path="/vegetarian"
+        element={<AddIngredients diet="Vegetarian" />}
+      />
+      <Route path="/celiac" element={<AddIngredients diet="Celiac" />} />
+    </Routes>
   );
-}
+};
 
 export default App;

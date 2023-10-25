@@ -1,9 +1,20 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
-import { SelectDiet } from "../components/SelectDiet";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import { SelectDiet } from "../pages/SelectDiet";
 
-test("renders Select Diet screen", () => {
-  render(<SelectDiet />);
-  const linkElement = screen.getByText(/Diet Scanner/i);
-  expect(linkElement).toBeInTheDocument();
+describe("SelectDiet page", () => {
+  it("renders the title, subtitle, and buttons", () => {
+    render(
+      <MemoryRouter>
+        <SelectDiet />
+      </MemoryRouter>,
+    );
+    expect(screen.getByText("Diet Scanner")).toBeInTheDocument();
+    expect(screen.getByText("Select Diet")).toBeInTheDocument();
+    expect(screen.getByText("Plant-based")).toBeInTheDocument();
+    expect(screen.getByText("Vegetarian")).toBeInTheDocument();
+    expect(screen.getByText("Celiac")).toBeInTheDocument();
+    expect(screen.getByText("Next")).toBeInTheDocument();
+  });
 });
