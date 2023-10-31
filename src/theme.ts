@@ -9,6 +9,15 @@ const theme = createTheme({
       main: "#de5b3d", // our secondary color
     },
   },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          margin: 0,
+        },
+      },
+    },
+  },
 });
 
 export default theme;

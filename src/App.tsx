@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { SelectDiet } from "./pages/SelectDiet";
 import AddIngredients from "./pages/AddIngredients";
 
@@ -16,6 +16,7 @@ const App: React.FC = () => {
         element={<AddIngredients diet="Vegetarian" />}
       />
       <Route path="/celiac" element={<AddIngredients diet="Celiac" />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 };
