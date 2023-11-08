@@ -1,6 +1,6 @@
 interface DietState {
-  selection: string;
   ingredients: string[];
+  view: "SET_INGREDIENTS" | "CHECK_INGREDIENTS";
 }
 
 interface SelectDietAction {
@@ -8,29 +8,34 @@ interface SelectDietAction {
   payload: string;
 }
 
-interface AddIngredientsAction {
-  type: "ADD_INGREDIENTS";
+interface SetIngredientsAction {
+  type: "SET_INGREDIENTS";
   payload: string[];
 }
 
-type DietActions = SelectDietAction | AddIngredientsAction;
+interface ToggleViewAction {
+  type: "TOGGLE_VIEW";
+  payload: "SET_INGREDIENTS" | "CHECK_INGREDIENTS";
+}
+
+type DietActions = SelectDietAction | SetIngredientsAction | ToggleViewAction;
 
 const initialState: DietState = {
-  selection: "",
   ingredients: [],
+  view: "SET_INGREDIENTS",
 };
 
 const dietReducer = (state = initialState, action: DietActions): DietState => {
   switch (action.type) {
-    case "SELECT_DIET":
-      return {
-        ...state,
-        selection: action.payload,
-      };
-    case "ADD_INGREDIENTS":
+    case "SET_INGREDIENTS":
       return {
         ...state,
         ingredients: action.payload,
+      };
+    case "TOGGLE_VIEW":
+      return {
+        ...state,
+        view: action.payload,
       };
     default:
       return state;

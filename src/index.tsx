@@ -4,6 +4,8 @@ import App from "./App";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import theme from "./theme";
 import { HashRouter as Router } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./store";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(
@@ -11,7 +13,9 @@ root.render(
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <App />
+        <Provider store={store}>
+          <App />
+        </Provider>
       </Router>
     </ThemeProvider>
   </React.StrictMode>,

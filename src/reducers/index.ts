@@ -5,4 +5,6 @@ const rootReducer = combineReducers({
   diet: dietReducer,
 });
 
+export type RootState = ReturnType<typeof rootReducer>;
+
 export default rootReducer;

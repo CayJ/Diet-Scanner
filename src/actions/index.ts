@@ -5,9 +5,16 @@ export const selectDiet = (diet: string) => {
   };
 };
 
-export const addIngredients = (ingredients: string[]) => {
+export const setIngredients = (ingredients: string[]) => {
   return {
-    type: "ADD_INGREDIENTS" as const,
+    type: "SET_INGREDIENTS" as const,
     payload: ingredients,
+  };
+};
+
+export const toggleView = (view: "SET_INGREDIENTS" | "CHECK_INGREDIENTS") => {
+  return {
+    type: "TOGGLE_VIEW" as const,
+    payload: view,
   };
 };
