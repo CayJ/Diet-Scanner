@@ -1,5 +1,5 @@
 // AddIngredients.tsx
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setIngredients, toggleView } from "../actions";
 import { RootState } from "../reducers";
@@ -18,15 +18,25 @@ interface AddIngredientsProps {
 const AddIngredients: React.FC<AddIngredientsProps> = ({ diet }) => {
   const dispatch = useDispatch();
   const { ingredients, view } = useSelector((state: RootState) => state.diet);
+  const [inputValue, setInputValue] = useState(ingredients.join(", "));
 
   const handleIngredientsChange = (value: string) => {
-    dispatch(
-      setIngredients(value.split(",").map((ingredient) => ingredient.trim())),
-    );
+    setInputValue(value);
+  };
+  const handleBackClick = () => {
+    updateIngredientsState();
+  };
+  const handleNextClick = () => {
+    updateIngredientsState();
+    dispatch(toggleView("CHECK_INGREDIENTS"));
   };
 
-  const handleNextClick = () => {
-    dispatch(toggleView("CHECK_INGREDIENTS"));
+  const updateIngredientsState = () => {
+    dispatch(
+      setIngredients(
+        inputValue.split(",").map((ingredient) => ingredient.trim()),
+      ),
+    );
   };
 
   if (view === "CHECK_INGREDIENTS") {
@@ -38,16 +48,13 @@ const AddIngredients: React.FC<AddIngredientsProps> = ({ diet }) => {
   return (
     <PageContainer>
       <Title title="Diet Scanner" subtitle={`Add Ingredients: ${diet}`} />
-      <IngredientsInput
-        value={ingredients.join(", ")}
-        onChange={handleIngredientsChange}
-      />
+      <IngredientsInput value={inputValue} onChange={handleIngredientsChange} />
       <Box mt={2} display="flex" justifyContent="space-between">
-        <BackButton to="/" />
+        <BackButton to="/" onClick={handleBackClick} />
         <Box ml={4}>
           <NextButton
             onClick={handleNextClick}
-            disabled={ingredients.length === 0}
+            disabled={inputValue.length === 0}
           />
         </Box>
       </Box>

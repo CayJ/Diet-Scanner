@@ -13,7 +13,8 @@ const BackButton: React.FC<BackButtonProps> = ({ to, onClick }) => {
   const handleClick = () => {
     if (onClick) {
       onClick();
-    } else if (to) {
+    }
+    if (to) {
       navigate(to);
     }
   };

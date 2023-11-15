@@ -26,7 +26,7 @@ describe("CheckIngredients page", () => {
       reducer: rootReducer,
       preloadedState: {
         diet: {
-          ingredients: ["Tomato"],
+          ingredients: ["Chicken"],
           view: "CHECK_INGREDIENTS",
         },
       },
@@ -40,6 +40,6 @@ describe("CheckIngredients page", () => {
       </Provider>,
     );
 
-    expect(screen.getByText("Tomato")).toBeInTheDocument();
+    expect(screen.getByText("Chicken")).toBeInTheDocument();
   });
 });
