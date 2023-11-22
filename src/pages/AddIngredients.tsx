@@ -48,7 +48,12 @@ const AddIngredients: React.FC<AddIngredientsProps> = ({ diet }) => {
   return (
     <PageContainer>
       <Title title="Diet Scanner" subtitle={`Add Ingredients: ${diet}`} />
-      <IngredientsInput value={inputValue} onChange={handleIngredientsChange} />
+      <Box sx={{ maxWidth: "500px", width: "100%", margin: "0 auto" }}>
+        <IngredientsInput
+          value={inputValue}
+          onChange={handleIngredientsChange}
+        />
+      </Box>
       <Box mt={2} display="flex" justifyContent="space-between">
         <BackButton to="/" onClick={handleBackClick} />
         <Box ml={4}>

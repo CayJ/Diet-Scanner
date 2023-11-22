@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, TextField } from "@mui/material";
+import { TextareaAutosize, TextField } from "@mui/material";
 
 interface IngredientsInputProps {
   value: string;
@@ -15,15 +15,22 @@ const IngredientsInput: React.FC<IngredientsInputProps> = ({
   };
 
   return (
-    <Box mt={2} sx={{ width: "80%" }}>
-      <TextField
-        label="Ingredients"
-        variant="outlined"
-        fullWidth
-        value={value}
-        onChange={handleChange}
-      />
-    </Box>
+    <TextField
+      fullWidth
+      multiline
+      rows={1}
+      variant="outlined"
+      placeholder="Enter ingredients..."
+      label="Ingredients"
+      value={value}
+      onChange={handleChange}
+      InputProps={{
+        inputComponent: TextareaAutosize as any,
+        inputProps: {
+          minRows: 1,
+        },
+      }}
+    />
   );
 };
 

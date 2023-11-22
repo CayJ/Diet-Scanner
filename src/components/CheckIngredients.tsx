@@ -31,7 +31,7 @@ const CheckIngredients: React.FC<CheckIngredientsProps> = ({ diet }) => {
         title="Diet Scanner"
         subtitle={`Flagged Ingredients for: ${diet}`}
       />
-      <Box sx={{ my: 2 }}>
+      <Box sx={{ maxHeight: "300px", overflowY: "auto" }}>
         {flagged.length > 0 ? (
           flagged.map((ingredient, index) => (
             <FlaggedIngredient key={index} ingredient={ingredient} />
