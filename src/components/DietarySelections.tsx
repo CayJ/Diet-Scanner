@@ -16,9 +16,16 @@ const DietarySelections: React.FC<DietarySelectionsProps> = ({
   const diets = ["Plant-based", "Vegetarian", "Celiac"];
 
   return (
-    <List>
+    <List
+      sx={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       {diets.map((diet) => (
-        <ListItem key={diet}>
+        <ListItem key={diet} sx={{ justifyContent: "center", width: "100%" }}>
           <Button
             variant="contained"
             onClick={() => onSelect(diet)}
@@ -27,6 +34,7 @@ const DietarySelections: React.FC<DietarySelectionsProps> = ({
               ":hover": {
                 backgroundColor: selectedDiet === diet ? green[700] : "",
               },
+              width: "auto",
             }}
           >
             {diet}

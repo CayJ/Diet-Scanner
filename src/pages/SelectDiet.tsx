@@ -20,7 +20,12 @@ export function SelectDiet() {
 
   return (
     <PageContainer>
-      <Title title="Diet Scanner" subtitle="Select Diet" />
+      <Title
+        title="Diet Scanner"
+        subtitle="Select Diet"
+        blurb="Have certain ingredients that you want to avoid? Select your diet below and we'll
+        let you know if we spot any ingredients that may not adhere to your dietary preferences."
+      />
       <DietarySelections onSelect={handleSelect} selectedDiet={selectedDiet} />
       <NextButton onClick={handleNext} disabled={!selectedDiet} />
     </PageContainer>

@@ -30,6 +30,9 @@ const CheckIngredients: React.FC<CheckIngredientsProps> = ({ diet }) => {
       <Title
         title="Diet Scanner"
         subtitle={`Flagged Ingredients for: ${diet}`}
+        blurb="Here is a list of the ingredients we found that may not adhere to your diet.
+        Note that this list is not complete, as we have not accounted for every possible
+        ingredient combination."
       />
       <Box sx={{ maxHeight: "300px", overflowY: "auto" }}>
         {flagged.length > 0 ? (

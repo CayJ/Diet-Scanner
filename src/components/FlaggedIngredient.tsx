@@ -12,11 +12,11 @@ const FlaggedIngredient: React.FC<FlaggedIngredientProps> = ({
     <Chip
       label={ingredient}
       sx={{
-        backgroundColor: "#ffcccc", // Light red background
-        color: "#cc0000", // Darker red text
+        backgroundColor: "#ffcccc",
+        color: "#cc0000",
         margin: 0.5,
-        fontSize: "0.875rem",
-        padding: "10px 15px", // Fuller look
+        fontSize: "1.0rem",
+        padding: "10px 15px",
         borderRadius: "4px",
       }}
     />

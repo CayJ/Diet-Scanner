@@ -47,7 +47,13 @@ const AddIngredients: React.FC<AddIngredientsProps> = ({ diet }) => {
   // Otherwise, show the ingredient input interface
   return (
     <PageContainer>
-      <Title title="Diet Scanner" subtitle={`Add Ingredients: ${diet}`} />
+      <Title
+        title="Diet Scanner"
+        subtitle={`Add Ingredients: ${diet}`}
+        blurb="Add a list of ingredients for a food item that you are considering consuming,
+        and we will check with our list of flagged ingredients for your dietary selection
+        to see if there are any ingredients that you should avoid."
+      />
       <Box sx={{ maxWidth: "500px", width: "100%", margin: "0 auto" }}>
         <IngredientsInput
           value={inputValue}

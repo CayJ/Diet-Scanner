@@ -7,7 +7,7 @@ interface PageContainerProps {
 
 const PageContainer: React.FC<PageContainerProps> = ({ children }) => {
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="md">
       <Box
         sx={{
           display: "flex",
@@ -16,6 +16,7 @@ const PageContainer: React.FC<PageContainerProps> = ({ children }) => {
           justifyContent: "center",
           minHeight: "100vh",
           backgroundColor: "#f9f9f9",
+          px: 8,
         }}
       >
         {children}

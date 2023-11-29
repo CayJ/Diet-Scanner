@@ -7,7 +7,7 @@ const plantBasedIngredients: string[] = [
   "Pork",
   "Honey",
   "Gelatin",
-  "Eggs",
+  "Egg",
   "Shrimp",
   "Crab",
   "Lobster",
@@ -31,9 +31,9 @@ const plantBasedIngredients: string[] = [
   "Cod",
   "Haddock",
   "Mackerel",
-  "Oysters",
-  "Clams",
-  "Snails",
-  "Frog legs",
+  "Oyster",
+  "Clam",
+  "Snail",
+  "Frog leg",
 ];
 export default plantBasedIngredients;

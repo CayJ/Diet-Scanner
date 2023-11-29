@@ -5,9 +5,10 @@ import { green, orange } from "@mui/material/colors";
 interface TitleProps {
   title: string;
   subtitle: string;
+  blurb: string;
 }
 
-const Title: React.FC<TitleProps> = ({ title, subtitle }) => {
+const Title: React.FC<TitleProps> = ({ title, subtitle, blurb }) => {
   return (
     <>
       <Typography
@@ -26,13 +27,25 @@ const Title: React.FC<TitleProps> = ({ title, subtitle }) => {
         variant="h2"
         component="h2"
         sx={{
-          marginBottom: "20px",
+          marginBottom: "30px",
           fontSize: "2rem",
           color: orange[600],
           textAlign: "center",
         }}
       >
         {subtitle}
+      </Typography>
+      <Typography
+        variant="body1"
+        sx={{
+          marginBottom: "40px",
+          fontSize: "1.1rem",
+          color: "#313131",
+          textAlign: "center",
+          lineHeight: 2.0,
+        }}
+      >
+        {blurb}
       </Typography>
     </>
   );
