@@ -9,7 +9,7 @@ import Title from "../components/Title";
 import BackButton from "../components/BackButton";
 import NextButton from "../components/NextButton";
 import IngredientsInput from "../components/IngredientsInput";
-import CheckIngredients from "../components/CheckIngredients";
+import CheckIngredients from "../components/CheckIngredients/CheckIngredients";
 
 interface AddIngredientsProps {
   diet: string;
@@ -34,7 +34,11 @@ const AddIngredients: React.FC<AddIngredientsProps> = ({ diet }) => {
   const updateIngredientsState = () => {
     dispatch(
       setIngredients(
-        inputValue.split(",").map((ingredient) => ingredient.trim()),
+        inputValue
+          .split(",")
+          .map((ingredient) => ingredient.trim())
+          .map((ingredient) => ingredient.replace(/[0-9]/g, "")) // numbers
+          .filter((ingredient) => ingredient.trim().length > 0), // empty
       ),
     );
   };

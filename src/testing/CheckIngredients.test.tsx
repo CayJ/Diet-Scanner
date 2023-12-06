@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import store from "../store";
-import CheckIngredients from "../components/CheckIngredients";
+import CheckIngredients from "../components/CheckIngredients/CheckIngredients";
 import { MemoryRouter } from "react-router-dom";
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "../reducers";

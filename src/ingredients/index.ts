@@ -1,15 +1,16 @@
-import plantBased from "./PlantBased";
-import vegetarian from "./Vegetarian";
-import celiac from "./Celiac";
+import { plantBasedIngredients } from "./PlantBased";
+import { vegetarianIngredients } from "./Vegetarian";
+import { celiacIngredients } from "./Celiac";
+import { Ingredient } from "./Ingredient";
 
 interface Ingredients {
-  [key: string]: string[];
+  [key: string]: Ingredient[];
 }
 
 const flaggedIngredients: Ingredients = {
-  "Plant-based": plantBased,
-  Vegetarian: vegetarian,
-  Celiac: celiac,
+  "Plant-based": plantBasedIngredients,
+  Vegetarian: vegetarianIngredients,
+  Celiac: celiacIngredients,
 };
 
 export default flaggedIngredients;

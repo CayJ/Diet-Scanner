@@ -16,7 +16,7 @@ const Title: React.FC<TitleProps> = ({ title, subtitle, blurb }) => {
         component="h1"
         sx={{
           marginBottom: "20px",
-          fontSize: "2.5rem",
+          fontSize: "2.0rem",
           color: green[600],
           textAlign: "center",
         }}
@@ -28,7 +28,7 @@ const Title: React.FC<TitleProps> = ({ title, subtitle, blurb }) => {
         component="h2"
         sx={{
           marginBottom: "30px",
-          fontSize: "2rem",
+          fontSize: "1.6rem",
           color: orange[600],
           textAlign: "center",
         }}
@@ -38,8 +38,8 @@ const Title: React.FC<TitleProps> = ({ title, subtitle, blurb }) => {
       <Typography
         variant="body1"
         sx={{
-          marginBottom: "40px",
-          fontSize: "1.1rem",
+          marginBottom: "20px",
+          fontSize: "1.0rem",
           color: "#313131",
           textAlign: "center",
           lineHeight: 2.0,
