@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Chip } from "@mui/material";
+import { Box } from "@mui/material";
 import { Ingredient } from "../../ingredients/Ingredient";
 import { IngredientCategory } from "../../ingredients/Categories";
 import FlaggedIngredient from "./FlaggedIngredient";

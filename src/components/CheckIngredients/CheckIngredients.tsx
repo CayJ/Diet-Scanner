@@ -9,7 +9,6 @@ import flaggedIngredients from "../../ingredients";
 import { Box } from "@mui/material";
 import { IngredientCategory } from "../../ingredients/Categories";
 import FlaggedCategory from "./FlaggedCategory";
-import FlaggedIngredient from "./FlaggedIngredient";
 
 const isFuzzyMatch = (input: string, target: string): boolean => {
   return input.toLowerCase() === target.toLowerCase();
