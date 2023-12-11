@@ -4,7 +4,7 @@ import DietarySelections from "../components/DietarySelections";
 
 test("renders three dietary buttons and handles clicks", () => {
   const mockOnSelect = jest.fn();
-  render(<DietarySelections onSelect={mockOnSelect} selectedDiet="" />);
+  render(<DietarySelections onSelect={mockOnSelect} selectedDiets={[]} />);
 
   const pbButton = screen.getByText("Plant-based");
   const vegetarianButton = screen.getByText("Vegetarian");

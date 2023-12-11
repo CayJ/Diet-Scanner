@@ -10,7 +10,7 @@ describe("AddIngredients page", () => {
     render(
       <Provider store={store}>
         <MemoryRouter>
-          <AddIngredients diet="Vegetarian" />
+          <AddIngredients diets={["Vegetarian"]} />
         </MemoryRouter>
       </Provider>,
     );

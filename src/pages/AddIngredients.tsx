@@ -12,10 +12,10 @@ import IngredientsInput from "../components/IngredientsInput";
 import CheckIngredients from "../components/CheckIngredients/CheckIngredients";
 
 interface AddIngredientsProps {
-  diet: string;
+  diets: string[];
 }
 
-const AddIngredients: React.FC<AddIngredientsProps> = ({ diet }) => {
+const AddIngredients: React.FC<AddIngredientsProps> = ({ diets }) => {
   const dispatch = useDispatch();
   const { ingredients, view } = useSelector((state: RootState) => state.diet);
   const [inputValue, setInputValue] = useState(ingredients.join(", "));
@@ -45,7 +45,7 @@ const AddIngredients: React.FC<AddIngredientsProps> = ({ diet }) => {
 
   if (view === "CHECK_INGREDIENTS") {
     // Render the CheckIngredients view if needed
-    return <CheckIngredients diet={diet} />;
+    return <CheckIngredients diets={diets} />;
   }
 
   // Otherwise, show the ingredient input interface
@@ -53,10 +53,10 @@ const AddIngredients: React.FC<AddIngredientsProps> = ({ diet }) => {
     <PageContainer>
       <Title
         title="Diet Scanner"
-        subtitle={`Add Ingredients: ${diet}`}
+        subtitle={`Add Ingredients for: ${diets.join(", ")}`}
         blurb="Add a list of ingredients for a food item that you are considering consuming,
-        and we will check with our list of flagged ingredients for your dietary selection
-        to see if there are any ingredients that you should avoid."
+        separated by commas, and we will check with our list of flagged ingredients for your
+        dietary selection to see if there are any ingredients that you should avoid."
       />
       <Box sx={{ maxWidth: "500px", width: "100%", margin: "0 auto" }}>
         <IngredientsInput

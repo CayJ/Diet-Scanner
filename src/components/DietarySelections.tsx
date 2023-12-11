@@ -2,16 +2,15 @@ import React from "react";
 import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import { green } from "@mui/material/colors";
 
 interface DietarySelectionsProps {
   onSelect: (dietaryOption: string) => void;
-  selectedDiet: string;
+  selectedDiets: string[];
 }
 
 const DietarySelections: React.FC<DietarySelectionsProps> = ({
   onSelect,
-  selectedDiet,
+  selectedDiets,
 }) => {
   const diets = ["Plant-based", "Vegetarian", "Celiac"];
 
@@ -30,9 +29,11 @@ const DietarySelections: React.FC<DietarySelectionsProps> = ({
             variant="contained"
             onClick={() => onSelect(diet)}
             sx={{
-              backgroundColor: selectedDiet === diet ? green[500] : "primary",
+              backgroundColor: selectedDiets.includes(diet)
+                ? "#4CAF50"
+                : "primary",
               ":hover": {
-                backgroundColor: selectedDiet === diet ? green[700] : "",
+                backgroundColor: selectedDiets.includes(diet) ? "#388E3C" : "",
               },
               width: "auto",
             }}

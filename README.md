@@ -15,6 +15,7 @@ is to make it easier for those following a diet to avoid specific ingredients.
 ### Dependencies
 
 * React
+* Redux
 * Redux Toolkit
 * Jest
 * TypeScript

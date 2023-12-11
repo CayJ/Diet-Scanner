@@ -12,7 +12,7 @@ describe("CheckIngredients page", () => {
     render(
       <Provider store={store}>
         <MemoryRouter>
-          <CheckIngredients diet="Vegetarian" />
+          <CheckIngredients diets={["Vegetarian"]} />
         </MemoryRouter>
       </Provider>,
     );
@@ -35,7 +35,7 @@ describe("CheckIngredients page", () => {
     render(
       <Provider store={mockStore}>
         <MemoryRouter>
-          <CheckIngredients diet="Vegetarian" />
+          <CheckIngredients diets={["Vegetarian"]} />
         </MemoryRouter>
       </Provider>,
     );
