@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/dietscanner/static/js/main.cfbf821f.js",
+    "main.js": "/dietscanner/static/js/main.bd170645.js",
     "index.html": "/dietscanner/index.html",
-    "main.cfbf821f.js.map": "/dietscanner/static/js/main.cfbf821f.js.map"
+    "main.bd170645.js.map": "/dietscanner/static/js/main.bd170645.js.map"
   },
   "entrypoints": [
-    "static/js/main.cfbf821f.js"
+    "static/js/main.bd170645.js"
   ]
 }
