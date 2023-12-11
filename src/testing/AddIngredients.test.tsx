@@ -14,6 +14,8 @@ describe("AddIngredients page", () => {
         </MemoryRouter>
       </Provider>,
     );
-    expect(screen.getByText("Add Ingredients: Vegetarian")).toBeInTheDocument();
+    expect(
+      screen.getByText("Add Ingredients for: Vegetarian"),
+    ).toBeInTheDocument();
   });
 });
